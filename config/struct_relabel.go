@@ -10,9 +10,9 @@ import (
 type RelabelConfig struct {
 	TargetLabel string              `hcl:",key" yaml:"target_label"`
 	SourceValue string              `hcl:"from" yaml:"from"`
-	Whitelist   []string            `hcl:"whitelist"`
-	Matches     []RelabelValueMatch `hcl:"match"`
-	Split       int                 `hcl:"split"`
+	Whitelist   []string            `hcl:"whitelist" yaml:"whitelist"`
+	Matches     []RelabelValueMatch `hcl:"match" yaml:"match"`
+	Split       int                 `hcl:"split" yaml:"split"`
 
 	WhitelistExists bool
 	WhitelistMap    map[string]interface{}
@@ -21,7 +21,7 @@ type RelabelConfig struct {
 // RelabelValueMatch describes a single label match statement
 type RelabelValueMatch struct {
 	RegexpString string `hcl:",key" yaml:"regexp"`
-	Replacement  string `hcl:"replacement"`
+	Replacement  string `hcl:"replacement" yaml:"replacement"`
 
 	CompiledRegexp *regexp.Regexp
 }
