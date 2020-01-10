@@ -1,2 +1,4 @@
 /.idea/
 /prometheus-nginxlog-exporter
+/dist/
+/go.sum
